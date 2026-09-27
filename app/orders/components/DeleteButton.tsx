@@ -1,6 +1,5 @@
 "use client";
 
-// TODO (Этап 1): типизируй пропсы — onDelete: () => void
-export default function DeleteButton({ onDelete }) {
+export default function DeleteButton({ onDelete }: { onDelete: () => void }) {
   return <button onClick={onDelete}>Delete</button>;
 }

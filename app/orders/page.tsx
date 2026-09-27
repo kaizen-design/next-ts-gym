@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import DeleteButton from "./components/DeleteButton";
 import OrderFilters from "./components/OrderFilters";
 
+type ID = string | number;
+
 export default function OrdersPage() {
   const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ export default function OrdersPage() {
       });
   }, []);
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: ID) => {
     await fetch(`/api/orders/${id}`, { method: "DELETE" });
     setOrders(orders.filter((o) => o.id !== id));
   };

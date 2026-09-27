@@ -1,7 +1,10 @@
-// TODO (Этап 1): типизируй children (React.ReactNode) вместо implicit any
-export default function RootLayout({ children }) {
+export default function RootLayout({ 
+  children 
+}: { 
+  children: React.ReactNode 
+}) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );
